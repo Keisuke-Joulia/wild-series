@@ -41,23 +41,24 @@ class CategoryController extends AbstractController
                 'name' => $categoryName
             ]);
 
-            if (!$category) {
-                throw $this->createNotFoundException(
-                    'No category with name : ' . $categoryName . ' found in category\'s table.'
-                );
-            }
-
+        if (!$category) {
+            throw $this->createNotFoundException(
+                'No category with name : ' . $categoryName . ' found in category\'s table.'
+            );
+        } else {
             $programs = $this->getDoctrine()
-            ->getRepository(Program::class)
-            ->findBy([
-                    'category' => $category->getId()
-                ],
-            [
-                'id' => 'DESC'
-            ],
-        3);
+                ->getRepository(Program::class)
+                ->findBy(
+                    [
+                        'category' => $category->getId()
+                    ],
+                    [
+                        'id' => 'DESC'
+                    ],
+                    3);
+            }
         return $this->render('category/show.html.twig', [
-            'programs' => $programs,
+                'programs' => $programs,
         ]);
     }
 }

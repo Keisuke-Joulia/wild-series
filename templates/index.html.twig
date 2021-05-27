@@ -4,4 +4,10 @@
 
 {% block body %}
 <h1>Bienvenue !</h1>
+<a href="{{ path('category_index') }}">
+    Afficher la liste des catégories
+</a> <br>
+<a href="{{ path('program_index') }}">
+    Afficher à la liste des programmes
+</a>
 {% endblock %}
