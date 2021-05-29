@@ -85,7 +85,7 @@ class ProgramController extends AbstractController
             ->findBy(['season' => $season->getId()]);
 
         return $this->render('program/season_show.html.twig', [
-            'program' => $program, 'season' => $season, 'episode' => $episodes
+            'program' => $program, 'season' => $season, 'episodes' => $episodes
         ]);
     }
 }

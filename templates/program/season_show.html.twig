@@ -7,9 +7,9 @@
 
     <h2>Liste des épisodes</h2>
     <ul>
-    {% for episodes in episode %}
-        <li>Episode {{ episodes.number }} : {{ episodes.title }}</li>
-       <p>{{ episodes.synopsis }}</p>
+    {% for episode in episodes %}
+        <li>Episode {{ episode.number }} : {{ episode.title }}</li>
+       <p>{{ episode.synopsis }}</p>
     {% else %}
       <li>Aucun épisode trouvé.</li>
     {% endfor %}
