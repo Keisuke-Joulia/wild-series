@@ -1,5 +1,5 @@
 {% extends "base.html.twig" %}
-{% block title %}Saison #{{ season.id }}{% endblock %}
+{% block title %}{{ program.title }} Saison {{ season.number }}{% endblock %}
 
 {% block body %}       
     <h2>Saison {{ season.number }} de {{ program.title }} - {{ season.year }}</h2>
