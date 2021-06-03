@@ -1,21 +1,62 @@
 {% extends "base.html.twig" %}
 {% block title %}{{ program.title }} Saison {{ season.number }}{% endblock %}
 
-{% block body %}       
-    <h2>Saison {{ season.number }} de {{ program.title }} - {{ season.year }}</h2>
-    <p>{{ season.description }}</p>
-
-    <h2>Liste des épisodes</h2>
-    <ul>
-    {% for episode in episodes %}
-        <li>Episode {{ episode.number }} : {{ episode.title }}</li>
-       <p>{{ episode.synopsis }}</p>
-    {% else %}
-      <li>Aucun épisode trouvé.</li>
-    {% endfor %}
-    </ul>
-
-  <a href="{{ path("program_show", { id: program.id }) }}">
+{% block body %}
+<div class="container mb-5 mt-3">
+  <h2>Saison {{ season.number }} de {{ program.title }} - {{ season.year }}</h2>
+  <p>{{ season.description }}</p>
+</div>
+<div class="ms-5 mb-3">
+  <h2>Liste des épisodes :</h2>
+</div>
+<div class="row justify-content-center">
+  {% for episode in episodes %}
+  <div class="col-auto mb-4">
+    <div class="card text-center bg-dark">
+      <div class="card-body">
+        <a href="{{ path("program_episode_show", { programId: program.id, seasonId: season.id, episodeId: episode.id })
+          }}" class=" btn btn-outline-secondary">Episode {{ episode.number }} : {{ episode.title }}</a>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <li>Aucun épisode trouvé.</li>
+  {% endfor %}
+</div>
+{# <div class="row justify-content-center">
+  {% for episode in episodes %}
+  <div class="col-auto mb-4">
+    <div class="card text-center bg-dark">
+      <div class="card-body">
+        <a type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+          data-bs-target="#episode{{ episode.number }}">
+          <h6>Episode {{ episode.number }} | {{ episode.title }}</h6>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="episode{{ episode.number }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title text-uppercase" id="exampleModalLabel">{{ program.title }} SAISON {{
+            season.number
+            }}</h5>
+          <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6 class="mb-3 fst-italic">ÉPISODE {{ episode.number }} : {{ episode.title }}</h6>
+          <p class="mt-3 mb-3">{{ episode.synopsis }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div> #}
+<div class="ms-5">
+  <a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-outline-dark">
     Retour à la fiche du programme
   </a>
-{% endblock %} 
+</div>
+{% endblock %}
