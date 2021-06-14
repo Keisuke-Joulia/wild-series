@@ -1,9 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Episode{% endblock %}
+{% block title %}Nouvelle Episode{% endblock %}
 
 {% block body %}
-    <h1>Create new Episode</h1>
+<div class="container">
+    <h1 class="text-center mt-5 mb-5 text-uppercase">Créer un nouvelle episode</h1>
+    <div class="form-control bg-dark text-white">
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    </div>
+
+</div>
 
     {{ include('episode/_form.html.twig') }}
 

@@ -4,9 +4,9 @@
 
 {% block body %}
 <div class="container">
-    <h2 class="mt-3 mb-3 text-center">Ajouter une nouvelle catégorie</h2>
+    <h1 class="mt-3 mb-3 text-center">Ajouter une nouvelle catégorie</h1>
     <div class="form-control bg-dark text-white">
-        {{ form_start(form) }}
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
         <div class="mb-3 text-center">Nom de la catégorie</div>
             <div class="text-end">{{ form_errors(form.name) }}</div>
             <div class="mb-3">{{ form_widget(form.name) }}</div>

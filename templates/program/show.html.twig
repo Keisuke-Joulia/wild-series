@@ -17,7 +17,7 @@
         <div class="row justify-content-center">
           {% for actor in program.actors %}
           <div class="col-auto mb-4">
-            <a href="{{ path("actor_show", { id: actor.id}) }}" class="btn btn-outline-secondary">{{ actor.name }}</a>
+            <a href="{{ path("actor_show", { id: actor.id }) }}" class="btn btn-outline-secondary">{{ actor.name }}</a>
           </div>
           {% else %}
           <p class="text-muted">Aucun acteur trouvé pour cette série</p>
