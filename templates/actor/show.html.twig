@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acteur{% endblock %}
+
+{% block body %}
+<div class="container d-flex justify-content-between mt-3 mb-1">
+    <h1>Acteur</h1>
+</div>
+<div class="align-items-center">
+    <div class="container">
+        <table class="table table-dark table-hover">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ actor.id }}</td>
+                </tr>
+                <tr>
+                    <th>Acteur</th>
+                    <td>{{ actor.name }}</td>
+                </tr>
+                <tr>
+                    <th>Série</th>
+                    <td>
+                        <ul>
+                            <div class="row justify-content-start">
+                                {% for program in programs %}
+                                <div class="col-auto">
+                                    <a href="{{ path("program_show", { id: program.id}) }}" class="btn btn-secondary">{{ program.title }}</a>
+                                </div>
+                                {% else %}
+                                Aucun acteur trouvé
+                                {% endfor %}
+                            </div>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

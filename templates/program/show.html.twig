@@ -12,6 +12,18 @@
         <h1 class="card-title">{{ program.title }}</h1>
         <p class="card-text">{{ program.synopsis }}</p>
         <p class="card-text"><small class="text-muted">Catégorie : {{ program.category.name }}</small></p>
+        <p class="card-text">Acteurs:</p>
+        <p class="card-text">
+        <div class="row justify-content-center">
+          {% for actor in program.actors %}
+          <div class="col-auto mb-4">
+            <a href="{{ path("actor_show", { id: actor.id}) }}" class="btn btn-outline-secondary">{{ actor.name }}</a>
+          </div>
+          {% else %}
+          <p class="text-muted">Aucun acteur trouvé pour cette série</p>
+          {% endfor %}
+        </div>
+        </p>
       </div>
     </div>
   </div>
@@ -34,8 +46,8 @@
 </div>
 </div>
 <div class="ms-5">
-<a href="{{ path('program_index') }}" class="btn btn-outline-dark ">
-  Retour à la liste des programmes
-</a>
+  <a href="{{ path('program_index') }}" class="btn btn-outline-dark ">
+    Retour à la liste des programmes
+  </a>
 </div>
 {% endblock %}
