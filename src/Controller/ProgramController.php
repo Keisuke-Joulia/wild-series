@@ -42,7 +42,7 @@ class ProgramController extends AbstractController
         $program = new Program();
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($program);
             $entityManager->flush();
@@ -57,13 +57,13 @@ class ProgramController extends AbstractController
 
     /**
      * Getting a program by id
-     * 
+     *
      * @Route("/show/{id<^[0-9]+$>}", name="show")
      * @return Response
      */
     public function show(Program $program): Response
     {
-       
+
         $seasons = $program->getSeasons();
 
         return $this->render('program/show.html.twig', ['program' => $program, 'seasons' => $seasons]);
