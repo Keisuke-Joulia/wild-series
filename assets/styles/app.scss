@@ -1,5 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
+$enable-negative-margins: true;
 
 body {
   background-color: whitesmoke;
+}
+
+#table {
+  margin-top: -3rem !important;
 }

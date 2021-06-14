@@ -1,8 +1,20 @@
 {% extends "base.html.twig" %}
 
+{% block title %} Nouvelle catégorie {% endblock %}
+
 {% block body %}
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input type='submit' value='Ajouter'>
-    {{ form_end(form) }}
+<div class="container">
+    <h2 class="mt-3 mb-3 text-center">Ajouter une nouvelle catégorie</h2>
+    <div class="form-control bg-dark text-white">
+        {{ form_start(form) }}
+        <div class="mb-3 text-center">Nom de la catégorie</div>
+            <div class="text-end">{{ form_errors(form.name) }}</div>
+            <div class="mb-3">{{ form_widget(form.name) }}</div>
+        {{ form_widget(form) }}
+        <div class="d-flex justify-content-center">
+            <input class="btn btn-outline-secondary mt-3" type='submit' value='Ajouter une catégorie'>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
 {% endblock %}

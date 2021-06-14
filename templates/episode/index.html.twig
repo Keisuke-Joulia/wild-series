@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Episode index{% endblock %}
+
+{% block body %}
+<div class="container d-flex justify-content-between mt-3 mb-1">
+    <h1>Episode index</h1>
+    <a href="{{ path('episode_new') }}" class="btn btn-outline-dark" style="height: 2.5rem;">Create new</a>
+</div>
+<div class="align-items-center">
+    <div class="container">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Number</th>
+                    <th>Synopsis</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for episode in episodes %}
+                <tr>
+                    <td>{{ episode.id }}</td>
+                    <td>{{ episode.title }}</td>
+                    <td>{{ episode.number }}</td>
+                    <td>{{ episode.synopsis }}</td>
+                    <td>
+                        <a href="{{ path('episode_show', {'id': episode.id}) }}"
+                            class="btn btn-outline-primary mt-1 mb-2">show</a>
+                        <a href="{{ path('episode_edit', {'id': episode.id}) }}" class="btn btn-outline-danger">edit</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

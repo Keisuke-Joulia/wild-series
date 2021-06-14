@@ -3,17 +3,22 @@
 {% block title %}All programs{% endblock %}
 
 {% block body %}
-    <h1 class="mb-5">Toutes les catégories de la table category : </h1>
+<h1 class="mt-3 mb-5">Toutes les catégories de la table category : </h1>
+<div class="row justify-content-center">
     {% for category in categories %}
-        <div class="mb-5">
-            <h2>{{ loop.index }} / {{ category.name }}</h2>
-             <a href="{{ path("category_show", { categoryName: category.name }) }}">Voir les programmes de cette catégorie</a>
+    <div class="col-auto mb-4">
+        <div class="card text-center bg-dark text-white">
+            <div class="card-body">
+                <h2>{{ category.name }}</h2>
+                <a href="{{ path("category_show", { categoryName: category.name }) }}" class="btn btn-outline-secondary">Voir les programmes de cette catégorie</a>
+            </div>
         </div>
+    </div>
     {% else %}
-        Aucune catégorie trouvée.
+    Aucune catégorie trouvée.
     {% endfor %}
-
-    <a href="{{ path('app_index') }}">
-        Retour à l'accueil
-    </a>
-{% endblock %}
+</div>
+<div class="ms-5">
+    <a href="{{ path('app_index') }}" class="btn btn-outline-dark">Retour à l'accueil</a>
+</div>
+    {% endblock %}
