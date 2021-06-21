@@ -7,3 +7,4 @@ Vidéo de la quete 13 Part2 https://www.loom.com/share/690cd58c91d84070881c63865
 Vidéo de la quete 14 https://www.loom.com/share/56ba40befc7f47d7bcf5a7aa73d99e3a
 Vidéo de la quete 15 https://www.loom.com/share/c2f88b3205e14af686cfd32e87b538fc
 Vidéo de la quete 16 https://www.loom.com/share/69a5fbce04504936814fe0c04bd3b042
+Vidéo de la quete 17 https://www.loom.com/share/4a712cf5495f4737ace785873847a9fc
