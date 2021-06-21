@@ -9,12 +9,12 @@
 <div class="ms-5 mb-3">
   <h2>Liste des épisodes :</h2>
 </div>
-{# <div class="row justify-content-center">
+<div class="row justify-content-center">
   {% for episode in episodes %}
   <div class="col-auto mb-4">
     <div class="card text-center bg-dark">
       <div class="card-body">
-        <a href="{{ path("program_episode_show", { programId: program.id, seasonId: season.id, episodeId: episode.id })
+        <a href="{{ path("program_episode_show", { slug: program.slug, seasonId: season.id, episodeSlug: episode.slug })
           }}" class=" btn btn-outline-secondary">Episode {{ episode.number }} : {{ episode.title }}</a>
       </div>
     </div>
@@ -22,8 +22,8 @@
   {% else %}
   <li>Aucun épisode trouvé.</li>
   {% endfor %}
-</div> #}
-<div class="row justify-content-center">
+</div>
+{# <div class="row justify-content-center">
   {% for episode in episodes %}
   <div class="col-auto mb-4">
     <div class="card text-center bg-dark">
@@ -53,9 +53,9 @@
     </div>
   </div>
   {% endfor %}
-</div>
+</div> #}
 <div class="ms-5">
-  <a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-outline-dark">
+  <a href="{{ path("program_show", { slug: program.slug }) }}" class="btn btn-outline-dark">
     Retour à la fiche du programme
   </a>
 </div>

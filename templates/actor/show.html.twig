@@ -25,7 +25,7 @@
                             <div class="row justify-content-start">
                                 {% for program in programs %}
                                 <div class="col-auto">
-                                    <a href="{{ path("program_show", { id: program.id}) }}" class="btn btn-secondary">{{ program.title }}</a>
+                                    <a href="{{ path("program_show", { slug: program.slug}) }}" class="btn btn-secondary">{{ program.title }}</a>
                                 </div>
                                 {% else %}
                                 Aucun acteur trouvé

@@ -8,3 +8,4 @@ Vidéo de la quete 14 https://www.loom.com/share/56ba40befc7f47d7bcf5a7aa73d99e3
 Vidéo de la quete 15 https://www.loom.com/share/c2f88b3205e14af686cfd32e87b538fc
 Vidéo de la quete 16 https://www.loom.com/share/69a5fbce04504936814fe0c04bd3b042
 Vidéo de la quete 17 https://www.loom.com/share/4a712cf5495f4737ace785873847a9fc
+Vidéo de la quete 18 https://www.loom.com/share/4eb4143d14164c979712d0c4f4a921b2
